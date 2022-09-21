@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Arpoador';
+  src: url(/fonts/Arpoador.otf) format("opentype");
+}
+@font-face {
+  font-family: 'KimMochi';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/fonts/KimMochi.otf) format("opentype");
+}
+@font-face {
+  font-family: 'ViceCitySans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/ViceCitySans.otf) format("opentype");
+}
+
+#fly-in div {
+  position: absolute;
+  margin: 2vh 0;
+  opacity: 0;
+  animation: switch 32s linear infinite;
+}
+
+#fly-in div:nth-child(1) { animation-delay: 4s}
+#fly-in div:nth-child(2) { animation-delay: 8s}
+#fly-in div:nth-child(3) { animation-delay: 12s}
+#fly-in div:nth-child(4) { animation-delay: 16s}
+#fly-in div:nth-child(5) { animation-delay: 20s}
+#fly-in div:nth-child(6) { animation-delay: 24s}
+#fly-in div:nth-child(7) { animation-delay: 28s}
+#fly-in div:nth-child(8) { animation-delay: 32s}
+
+@keyframes switch {
+    0% { opacity: 0;filter: blur(20px); transform:scale(12)}
+    3% { opacity: 1;filter: blur(0); transform:scale(1)}
+    10% { opacity: 1;filter: blur(0); transform:scale(.9)}
+    13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+
+.contact_tag:before{
+    display:inline-block;
+    height:16px;
+    width:16px;
+    margin-right: 5px;
+    content: "";
+    background:url(/image/mu_tag.webp) no-repeat 0 0;
+    background-size: 16px 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .video-mask {
+        clip: rect(0px,230px,400px,40px);
+    } 
+}
+
+@media screen and (max-width: 767px) {
+    .video-mask {
+        clip: rect(0px,190px,400px,20px);
+    } 
+}
+
+@media screen and (max-width: 414px) {
+    .video-mask {
+        clip: rect(0px,160px,400px,10px)
+    } 
+}
+
+
